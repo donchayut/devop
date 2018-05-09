@@ -22,9 +22,12 @@ pipeline {
         }
         stage("Push image"){
             steps {
-                
-                sh "docker login -u donchayut -p 45213027"
-                sh "docker push ${env.imageName}"
+                script{
+                    docker.withRegistry('http://registry.hub.docker.com','docker-id'){
+                        def image=docker.build("${env.imageName}:1.${env.BUILD_NUMBER}")
+                        image.push()
+                    }
+                }
                
             }
         }
