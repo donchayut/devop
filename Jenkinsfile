@@ -22,6 +22,8 @@ pipeline {
         }
         stage("Push image"){
             steps {
+                
+                sh "docker login -u donchayut -p 45213027"
                 sh "docker push -t ${env.imageName} ."
                
             }
