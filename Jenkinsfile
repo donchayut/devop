@@ -31,6 +31,13 @@ pipeline {
                
             }
         }
+        stage("deploy"){
+            steps{
+                sshagent(['uat-server']){
+                    echo "ec deploy step"
+                }
+            }
+        }
 
     }
 }
