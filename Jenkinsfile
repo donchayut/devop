@@ -20,6 +20,12 @@ pipeline {
                 sh "docker tag ${env.imageName} ${env.imageName}:1.${env.BUILD_NUMBER}"
             }
         }
+        stage("Push image"){
+            steps {
+                sh "docker push -t ${env.imageName} ."
+               
+            }
+        }
 
     }
 }
