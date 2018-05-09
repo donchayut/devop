@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment { 
-        imageName = "hello-nginx"
+        imageName = "donchayut/hello-nginx"
     }
     stages {
         stage("Prepare"){
