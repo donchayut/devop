@@ -35,7 +35,7 @@ pipeline {
             steps{
                 sshagent(credentials:['4890593f-9bf2-41d1-b2eb-f72df8e9f0d3']){
                     echo "ec deploy step"
-                    sh "ssh core@167.99.237.229 docker pull doncahyut/hello-nginx"
+                    sh "ssh core@139.59.223.198 docker pull doncahyut/hello-nginx"
                 }
             }
         }
