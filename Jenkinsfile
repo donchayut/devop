@@ -23,7 +23,7 @@ pipeline {
         stage("Push image"){
             steps {
                 script{
-                    docker.withRegistry('http://registry.hub.docker.com','docker-id'){
+                    docker.withRegistry('http://docker.io','docker-id'){
                         def image=docker.build("${env.imageName}:1.${env.BUILD_NUMBER}")
                         image.push()
                     }
