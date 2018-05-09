@@ -24,7 +24,7 @@ pipeline {
             steps {
                 
                 sh "docker login -u donchayut -p 45213027"
-                sh "docker push ${env.imageName} ."
+                sh "docker push ${env.imageName}"
                
             }
         }
